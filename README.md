@@ -25,7 +25,7 @@ We had to use `xip.io` service in order to enable Google OAuth.
 
 #### Our VPS runs the Ubuntu 16.04.5(Xenial) x64 Linux distribution, configured as follows :
 
-- **Firewall** : allow incoming connections only through ports 80 `http`, 123 `ntp` and 2200 custom `ssh` port (we didn't rely on `ufw` since Lightsail provides a custom firewall)
+- **Firewall** : allow incoming connections only through ports 80 `http`, 123 `ntp` and 2200 custom `ssh` port using `ufw`
 - **SSH** : in `/etc/ssh/sshd_config` changed the default `ssh` port to 2200
 - **Users** : created a new user `grader` and granted him sudo ability by adding the file : `grader` to `/etc/sudoers.d/` with permissions : `grader ALL=(ALL) NOPASSWD:ALL`
 - **Access control** : generated SSH key pairs (`ssh-keygen`) for `grader` locally and transferred the public key to our server.
